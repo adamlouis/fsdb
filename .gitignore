@@ -1,5 +1,4 @@
 *.db
 *.db-journal
 .idea
-fsdb
 .DS_Store

@@ -6,6 +6,8 @@
 
 `fsdb` traverses the file system & writes data to a local `sqlite3` db file.
 
+`sqlite3` schema for the file table is:
+
 ```
 CREATE TABLE file(
   name TEXT NOT NULL,
@@ -23,6 +25,12 @@ CREATE TABLE file(
 );
 ```
 
+## how
+
+See the `Makefile` for commands
+
+Run the index command with: `go run main.go index -v`
+
 ## why
 
 I wrote this utility to help manage disk space & disk organization on my personal computer. I needed a tool to get organized, free up space, and locate important documents.
@@ -32,10 +40,12 @@ The `sqlite3` backend makes it easy to answer ad-hoc questions about filesystem 
 ## examples
 
 10 largest files:
-`SELECT path, size AS size FROM file ORDER BY size DESC LIMIT 10;`
+
+`SELECT path, size FROM file ORDER BY size DESC LIMIT 10;`
 
 10 file extensions that consume most space:
-`SELECT ext, SUM(size)/1e9 as GB FROM file GROUP BY ext ORDER BY GB DESC LIMIT 10;`
+
+`SELECT ext, SUM(size)/1e9 AS GB FROM file GROUP BY ext ORDER BY GB DESC LIMIT 10;`
 
 ## todo
 
