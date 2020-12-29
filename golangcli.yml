@@ -1,3 +1,0 @@
-linters-settings:
-  golint:
-    min-confidence: 0
