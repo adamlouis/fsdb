@@ -21,7 +21,8 @@ CREATE TABLE file(
   is_permission INTEGER,
   is_timeout INTEGER,
   mode TEXT NOT NULL,
-  modified TEXT NOT NULL
+  modified TEXT NOT NULL,
+  md5 TEXT
 );
 ```
 

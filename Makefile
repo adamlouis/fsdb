@@ -1,9 +1,6 @@
 
 run:
-	go run main.go
-
-run-index:
-	go run main.go index -v
+	go run main.go index -v --hash
 
 clean:
 	rm -f ./*.db
@@ -15,3 +12,5 @@ clean:
 build:
 	go build -o fsdb main.go
 
+test:
+	go run main.go index -v --hash --root=./test
