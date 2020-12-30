@@ -10,6 +10,7 @@
 
 ```
 CREATE TABLE file(
+  id INTEGER PRIMARY KEY,
   name TEXT NOT NULL,
   path TEXT NOT NULL,
   ext TEXT NOT NULL,
@@ -22,7 +23,8 @@ CREATE TABLE file(
   is_timeout INTEGER,
   mode TEXT NOT NULL,
   modified TEXT NOT NULL,
-  md5 TEXT
+  md5 TEXT,
+  CONSTRAINT file_path_uniq UNIQUE(path)
 );
 ```
 
