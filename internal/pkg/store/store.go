@@ -124,7 +124,7 @@ func ListPathsForUnsetMD5(db *sql.DB, count int, cur int64) (*ListPathsForUnsetM
 			AND is_dir = false
 			AND size > 0
 			AND id > ?
-		ORDER BY SIZE
+		ORDER BY id ASC
 		LIMIT ?`,
 		cur, count)
 	if err != nil {
